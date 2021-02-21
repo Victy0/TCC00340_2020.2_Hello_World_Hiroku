@@ -31,7 +31,8 @@ public class HelloServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+        
+        response.setContentType("text/html;charset=UTF-8");  
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
@@ -58,6 +59,9 @@ public class HelloServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+                
+        long tempoInicial = System.currentTimeMillis();
         
         String msg = "";
         
@@ -93,6 +97,7 @@ public class HelloServlet extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet HelloServlet</h1>");
+            out.println("<h2>O método foi executado em " + ((System.currentTimeMillis() - tempoInicial) < 1 ? "em menos de" : "em mais de") + " 1 milisegundo</h2>");
             out.println("<p>" + msg + "</p>");
             out.println("</body>");
             out.println("</html>");
@@ -110,6 +115,9 @@ public class HelloServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        long tempoInicial = System.currentTimeMillis(); 
+        
         String msg = "";
         
         String lang = request.getParameter("lang");
@@ -147,6 +155,7 @@ public class HelloServlet extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet HelloServlet</h1>");
+            out.println("<h2>O método foi executado em " + ((System.currentTimeMillis() - tempoInicial) < 1 ? "menos de" : "mais de") + " 1 milisegundo</h2>");
             out.println("<p>" + msg + "</p>");
             out.println("</body>");
             out.println("</html>");
