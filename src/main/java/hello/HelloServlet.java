@@ -97,7 +97,7 @@ public class HelloServlet extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet HelloServlet</h1>");
-            out.println("<h2>O método foi executado em " + ((System.currentTimeMillis() - tempoInicial) < 1 ? "em menos de" : "em mais de") + " 1 milisegundo</h2>");
+            out.println("<h2>O método foi executado em " + (System.currentTimeMillis() - tempoInicial) + " milisegundo</h2>");
             out.println("<p>" + msg + "</p>");
             out.println("</body>");
             out.println("</html>");
@@ -155,7 +155,7 @@ public class HelloServlet extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet HelloServlet</h1>");
-            out.println("<h2>O método foi executado em " + ((System.currentTimeMillis() - tempoInicial) < 1 ? "menos de" : "mais de") + " 1 milisegundo</h2>");
+            out.println("<h2>O método foi executado em " + (System.currentTimeMillis() - tempoInicial) + " milisegundo</h2>");
             out.println("<p>" + msg + "</p>");
             out.println("</body>");
             out.println("</html>");
